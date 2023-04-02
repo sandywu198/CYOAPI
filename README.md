@@ -2,7 +2,7 @@
 
 Submitted by: Sandy Wu
 
-Time spent: 1.5 hours spent in total
+Time spent: 2 hours spent in total
 
 ## Summary
 
@@ -38,7 +38,7 @@ My chosen API for this project is Disney API.
 
 Here's a video / GIF that demos all of the app's implemented features:
 
-![DisneyAPI](https://user-images.githubusercontent.com/118078517/229218370-45e3c5f2-994c-4395-8e95-78f70786397b.gif)
+![DisneyAPI](https://user-images.githubusercontent.com/118078517/229330269-0994f40f-0592-45af-b45d-90fecf3ed2f3.gif)
 
 GIF created with ScreenToGif
 
