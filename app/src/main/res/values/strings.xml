@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Choose Your Own API</string>
+    <string name="app_name">Disney API</string>
+
+    <string name="default_show">\"Mickey Mouse Clubhouse\"</string>
+    <string name="default_name">Mickey Mouse</string>
+    <string name="button_Words">Get Random Disney Characters!</string>
 </resources>
