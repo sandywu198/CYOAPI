@@ -1,4 +1,6 @@
-# AND101 Project 5 - DisneyCharacters
+<!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
+
+# AND101 Project 6 - CYOAPI Part 2: RecyclerView Edition
 
 Submitted by: Sandy Wu
 
@@ -6,9 +8,9 @@ Time spent: 2 hours spent in total
 
 ## Summary
 
-Disney API is an android app that displays random characters of Disney API
+DisneyCharacter is an android app that  displays a scrollable list of characters from Disney Channel.
 
-If I had to describe this project in three (3) emojis, they would be: 😊🤩🤗
+If I had to describe this project in three (3) emojis, they would be: 😮‍💨😑🤨
 
 ## Application Features
 
@@ -17,28 +19,23 @@ If I had to describe this project in three (3) emojis, they would be: 😊🤩�
 The following REQUIRED features are completed:
 
 - [X] Make an API call to an API of your choice using AsyncHTTPClient
-- [X] Display at least three (3) pieces of data for each API entry retrieved
-- [X] A working Button requests a new API entry and updates the data displayed
+- [X] Implement a RecyclerView to display a list of entries from the API
+- [ ] Display at least three (3) pieces of data for each RecyclerView item
 
 The following STRETCH features are implemented:
 
-- [ ] Add a query to the API request
-  - The query I added is **FILL IN HERE**
-- [ ] Build a UI to allow users to add that query
+- [ ] Add a UI element for the user to interact with API further
+- [ ] Show a `Toast` or `Snackbar` when an item is clicked
+- [ ] Add item dividers with `DividerItemDecoration`
 
 The following EXTRA features are implemented:
 
 - [ ] List anything else that you added to improve the app!
 
-## API Choice
-
-My chosen API for this project is Disney API.
-
 ## Video Demo
 
 Here's a video / GIF that demos all of the app's implemented features:
-
-![DisneyAPI](https://user-images.githubusercontent.com/118078517/229330269-0994f40f-0592-45af-b45d-90fecf3ed2f3.gif)
+![DisneyAPI_RecycleView](https://user-images.githubusercontent.com/118078517/230705304-4a2abb97-f86d-45f9-9933-2730d678c822.gif)
 
 GIF created with ScreenToGif
 
