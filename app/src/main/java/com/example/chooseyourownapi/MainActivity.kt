@@ -14,11 +14,12 @@ import com.bumptech.glide.Glide
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private lateinit var characterList: MutableList<String>
     private lateinit var rvCharacters: RecyclerView
-//    var disneyImageURL = ""
+    var disneyImageURL = ""
 //    var disneyName = ""
 //    var disneyMovieShow = ""
 
@@ -50,45 +51,46 @@ class MainActivity : AppCompatActivity() {
 //        }
 //    }
     private fun getDisneyImage() {
-        val client = AsyncHttpClient()
-        client["https://api.disneyapi.dev/characters", object : JsonHttpResponseHandler() {
-            override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON) {
-                val characterArray = json.jsonObject.getJSONArray("Character")
-                for (i in 0 until characterArray.length()) {
-                    characterList.add(characterArray.getString(i))
+        for (i in 0 until 40) {
+            val client = AsyncHttpClient()
+            val num = Random.nextInt(10,7526)
+            val string = "https://api.disneyapi.dev/characters/$num"
+            client[string, object : JsonHttpResponseHandler() {
+                override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON){
+                    Log.d("Character", "response successful$json")
+                    disneyImageURL = json.jsonObject.getString("imageUrl")
+                    characterList.add(disneyImageURL)
+                    val adapter = DisneyAdapter(characterList)
+                    rvCharacters.adapter = adapter
+                    rvCharacters.layoutManager = LinearLayoutManager(this@MainActivity)
+                    //                disneyName = json.jsonObject.getString("name")
+                    //                if(json.jsonObject.getString("films").equals("[]")){
+                    //                    if(json.jsonObject.getString("shortFilms").equals("[]")){
+                    //                        disneyMovieShow = json.jsonObject.getString("tvShows")
+                    //                        disneyMovieShow = disneyMovieShow.replace("[", " ")
+                    //                        disneyMovieShow = disneyMovieShow.replace("]", " ")
+                    //                    } else{
+                    //                        disneyMovieShow = json.jsonObject.getString("shortFilms")
+                    //                        disneyMovieShow = disneyMovieShow.replace("[", " ")
+                    //                        disneyMovieShow = disneyMovieShow.replace("]", " ")
+                    //                    }
+                    //                } else{
+                    //                    disneyMovieShow = json.jsonObject.getString("films")
+                    //                    disneyMovieShow = disneyMovieShow.replace("[", " ")
+                    //                    disneyMovieShow = disneyMovieShow.replace("]", " ")
+                    //                }
                 }
-                val adapter = DisneyAdapter(characterList)
-                rvCharacters.adapter = adapter
-                rvCharacters.layoutManager = LinearLayoutManager(this@MainActivity)
-                Log.d("Character", "response successful$json")
-//                disneyImageURL = json.jsonObject.getString("imageUrl")
-//                disneyName = json.jsonObject.getString("name")
-//                if(json.jsonObject.getString("films").equals("[]")){
-//                    if(json.jsonObject.getString("shortFilms").equals("[]")){
-//                        disneyMovieShow = json.jsonObject.getString("tvShows")
-//                        disneyMovieShow = disneyMovieShow.replace("[", " ")
-//                        disneyMovieShow = disneyMovieShow.replace("]", " ")
-//                    } else{
-//                        disneyMovieShow = json.jsonObject.getString("shortFilms")
-//                        disneyMovieShow = disneyMovieShow.replace("[", " ")
-//                        disneyMovieShow = disneyMovieShow.replace("]", " ")
-//                    }
-//                } else{
-//                    disneyMovieShow = json.jsonObject.getString("films")
-//                    disneyMovieShow = disneyMovieShow.replace("[", " ")
-//                    disneyMovieShow = disneyMovieShow.replace("]", " ")
-//                }
-            }
 
-            override fun onFailure(
-                statusCode: Int,
-                headers: Headers?,
-                errorResponse: String,
-                throwable: Throwable?
-            ) {
-                Log.d("Character Error", errorResponse)
-            }
-        }]
+                override fun onFailure(
+                    statusCode: Int,
+                    headers: Headers?,
+                    errorResponse: String,
+                    throwable: Throwable?
+                ) {
+                    Log.d("Character Error", errorResponse)
+                }
+            }]
+        }
     }
     class DisneyAdapter (private val characterList: List<String>): RecyclerView.Adapter<DisneyAdapter.ViewHolder>(){
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
