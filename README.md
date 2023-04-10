@@ -4,7 +4,7 @@
 
 Submitted by: Sandy Wu
 
-Time spent: 2 hours spent in total
+Time spent: 4 hours spent in total
 
 ## Summary
 
@@ -20,7 +20,7 @@ The following REQUIRED features are completed:
 
 - [X] Make an API call to an API of your choice using AsyncHTTPClient
 - [X] Implement a RecyclerView to display a list of entries from the API
-- [ ] Display at least three (3) pieces of data for each RecyclerView item
+- [X] Display at least three (3) pieces of data for each RecyclerView item
 
 The following STRETCH features are implemented:
 
@@ -35,7 +35,8 @@ The following EXTRA features are implemented:
 ## Video Demo
 
 Here's a video / GIF that demos all of the app's implemented features:
-![DisneyAPI_RecycleView](https://user-images.githubusercontent.com/118078517/230705304-4a2abb97-f86d-45f9-9933-2730d678c822.gif)
+
+![DisneyAPI_RecycleView](https://user-images.githubusercontent.com/118078517/230830769-19376c64-6bf2-4f2f-9f6c-65821ddc4bd6.gif)
 
 GIF created with ScreenToGif
 
