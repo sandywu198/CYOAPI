@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
     var disneyImageURL = ""
     var disneyName = ""
     var disneyMovieShow = ""
-    val from = 10
-    val to = 7526
-    val random = Random
-    var amplititudes  = IntArray(40) { random.nextInt(to - from) +  from }.asList()
+//    val from = 10
+//    val to = 7526
+//    val random = Random
+//    var amplititudes  = IntArray(20) { random.nextInt(to - from) +  from }.asList()
 //    var round = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity() {
     private fun getDisneyImage() {
         for (i in 0 until 20) {
             val client = AsyncHttpClient()
-//            val num = Random.nextInt(10,7526)
-            val num = amplititudes[i]
-            val string = "https://api.disneyapi.dev/characters/$num"
+            val num = Random.nextInt(10,7526)
+//            val num = amplititudes[i]
+            val string = "https://api.disneyapi.dev/character/$num"
             client[string, object : JsonHttpResponseHandler() {
                 override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON){
                     Log.d("Character", "response successful$json")
@@ -80,15 +80,18 @@ class MainActivity : AppCompatActivity() {
                             disneyMovieShow = json.jsonObject.getString("tvShows")
                             disneyMovieShow = disneyMovieShow.replace("[", " ")
                             disneyMovieShow = disneyMovieShow.replace("]", " ")
+                            Log.d("Show", "response successful$json")
                         } else{
                             disneyMovieShow = json.jsonObject.getString("shortFilms")
                             disneyMovieShow = disneyMovieShow.replace("[", " ")
                             disneyMovieShow = disneyMovieShow.replace("]", " ")
+                            Log.d("Show", "response successful$json")
                         }
                     } else{
                         disneyMovieShow = json.jsonObject.getString("films")
                         disneyMovieShow = disneyMovieShow.replace("[", " ")
                         disneyMovieShow = disneyMovieShow.replace("]", " ")
+                        Log.d("Show", "response successful$json")
                     }
                     nameList.add(disneyName)
                     fromList.add(disneyMovieShow)

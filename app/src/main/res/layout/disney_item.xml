@@ -13,20 +13,25 @@
 
     <TextView
         android:id="@+id/characterName"
-        android:layout_width="406dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="282dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="236dp"
+        android:fontFamily="@font/sofia"
         android:text="@string/default_show"
         android:textAlignment="center"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterImage" />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/characterShow"
-        android:layout_width="406dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="405dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/big_shoulders_text_light"
         android:text="@string/default_show"
         android:textAlignment="center"
         android:textSize="16sp"
